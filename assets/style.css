@@ -1,0 +1,166 @@
+body,
+button {
+    font-family: Palatino, Palatino Linotype, Palatino LT STD, Book Antiqua, Georgia, serif;
+}
+
+.btn-large {
+    margin-top: 10px;
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+.footer-fixed {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+#header,
+#mobile-header {
+    transition: top .3s;
+}
+
+#footer,
+#mobile-footer {
+    transition: bottom .3s;
+}
+
+.inverted {
+    -webkit-filter: invert(1);
+    filter: invert(1);
+}
+
+.gradient {
+    background-image: linear-gradient(to right, brown, maroon, navy);
+}
+
+.material-tooltip {
+    max-width: 50%;
+    word-wrap: normal;
+    border-radius: 5px;
+}
+
+#footnote-text-display {
+    font-size: 12px;
+    font-weight: bold;
+}
+
+#letter-display {
+    font-size: 17px;
+}
+
+.letter-match {
+    color: navy !important;
+    font-size: 14px;
+}
+
+.match:hover,
+.reset-search,
+.random,
+.scroll-to-top, #strict-search-toggle-desktop, #strict-search-toggle-mobile {
+    cursor: pointer
+}
+
+.tabs .tab a {
+    color: white;
+}
+
+.tabs .tab a:hover {
+    color: rgb(0, 150, 136);
+}
+
+.tabs .tab a.active {
+    color: rgb(0, 150, 136);
+}
+
+.tabs .indicator {
+    background-color: rgb(0, 150, 136);
+}
+
+a.dropdown-trigger.btn {
+    margin-bottom: 20px;
+}
+
+/* Faking opaque background */
+/* https://scotch.io/tutorials/how-to-change-a-css-background-images-opacity */
+.my-container {
+    position: relative;
+    width: 100%;
+}
+
+.my-container h1 {
+    padding: 200px;
+    position: relative;
+    z-index: 2;
+}
+
+.my-container img {
+    position: absolute;
+    left: 0;
+    top: -400px;
+    width: 100%;
+    opacity: 0.1;
+    z-index: -2;
+}
+
+#mobile-header {
+    padding-bottom: 15px;
+}
+
+#mobile-footer {
+    padding: 0px;
+    margin: 0px;
+}
+
+.footer-icons {
+    display: inline-block;
+    position: relative;
+    top: 8px;
+}
+
+.footer-icons-container {
+    text-align: center;
+}
+
+@media screen and (min-width: 0px) and (max-width: 400px) {
+    .footer-fixed,
+    .navbar-fixed {
+        display: none;
+    }
+    #mobile-header,
+    #mobile-footer {
+        display: block;
+    }
+}
+
+@media screen and (min-width: 401px) and (max-width: 750px) {
+    .footer-fixed,
+    .navbar-fixed {
+        display: none;
+    }
+    #mobile-header,
+    #mobile-footer {
+        display: block;
+    }
+}
+
+@media screen and (min-width: 751px) and (max-width: 5000px) {
+
+    .footer-fixed,
+    .navbar-fixed {
+        display: block;
+    }
+
+    #mobile-header,
+    #mobile-footer {
+        display: none;
+    }
+}

@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>CSL Collected Letters Search</title>
+    <meta name="description" content="">
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Materialize -->
+    <link rel="stylesheet" href="./assets/materialize.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./assets/style.css">
+</head>
+
+<body>
+
+    <div class="my-container">
+        <img src="./assets/letter-lg.jpg">
+    </div>
+
+    <header>
+        <div id="header" class="navbar-fixed">
+            <nav class="grey darken-3">
+                <div class="nav-wrapper">
+
+                    <div style="text-align: center">
+                        <span style="color: white; font-size: 25px; text-align: center"> The Collected Letters
+                            of</span>
+                        <img class="inverted" style="height: 40px; position: relative; top: 10px;"
+                            src="./assets/c-s-lewis-signature.png">
+                    </div>
+
+                    <img id="search-validate" title="Search validation" src="assets/green-check.png"
+                        style="height: 24px; float: right; position: relative; right: 15px; bottom: 45px;">
+
+                    <img id="strict-search-toggle-desktop" onclick="toggleStrictSearch();"
+                        title="Toggle strict search (whole word matches only)" src="assets/lock-open.png"
+                        style="height: 24px; float: right; position: relative; right: 25px; bottom: 45px;">
+
+                    <img class="scroll-to-top" title="Scroll to top" src="assets/up-arrow.png"
+                        style="height: 24px; float: right; position: relative; right: 29px; bottom: 45px;">
+
+                    <img class="reset-search" onclick="resetAllInputs();" title="Reset search parameters and results"
+                        src="assets/refresh.png"
+                        style="height: 30px; float: right; float: right; position: relative; right: 33px; bottom: 48px;">
+
+                    <img class="random" title="Random letter" src="assets/shuffle.png"
+                        style="height: 28px; float: right; float: right; position: relative; right: 40px; bottom: 47px;">
+
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <div id="mobile-header" class="navbar-fixed">
+        <nav class="grey darken-3">
+            <div class="nav-wrapper">
+                <div style="text-align: center">
+                    <span style="color: white; font-size: 20px; text-align: center"> The Collected Letters
+                        of</span>
+                    <img class="inverted" style="height: 30px; position: relative; top: 10px;"
+                        src="./assets/c-s-lewis-signature.png">
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <main class="container">
+
+        <br>
+
+        <div class="row card-panel grey lighten-3">
+            <div class="col s12">
+                <ul class="tabs grey darken-2 tabs-fixed-width">
+
+                    <li class="tab col "><a class="active" href="#search-parameter-1">Terms</a></li>
+                    <li class="tab col "><a href="#search-parameter-2">Year</a></li>
+                    <li class="tab col "><a href="#search-parameter-3">Volume</a></li>
+                    <li class="tab col "><a href="#search-parameter-4">Recipient</a></li>
+                    <li class="tab col "><a href="#search-parameter-5">Archives</a></li>
+
+                </ul>
+            </div>
+
+            <div id="search-parameter-1" class="col s12 center-align">
+                <br>
+                <div class="row col m3"></div>
+                <div class="row col m6 s12">
+                    <div class="input-field">
+                        <input onkeypress="return checkSubmit(event);" id="search-phrase" type="text" class="validate">
+                        <label for="autocomplete-input">Type here</label>
+                    </div>
+                </div>
+            </div>
+
+            <div id="search-parameter-2" class="col s12 center-align">
+
+                <div class="row">
+
+                    <div class="col m1"></div>
+                    <div class="col m2 s3">
+                        <form action="#">
+                            <p>
+                                <label>
+                                    <input type="checkbox" name="year-tick" class="year-tick" checked="checked" />
+                                    <span>1905</span>
+                                </label>
+                            </p>
+                            <p>
+                                <label>
+                                    <input type="checkbox" name="year-tick" class="year-tick" checked="checked" />
+                                    <span>1906</span>
+                                </label>
+                            </p>
+                            <p>
+                                <label>
+                                    <input type="checkbox" name="year-tick" class="year-tick" checked="checked" />
+                                    <span>1907</span>
+                                </label>
+                            </p>
+                            <p>
+                                <label>
+                                    <input type="checkbox" name="year-tick" class="year-tick" checked="checked" />
+                                    <span>1908</span>
+                                </label>
+                            </p>
+                            <p>
+                                <label>
+                                    <input type="checkbox" name="year-tick" class="year-tick" checked="checked" />
+                                    <span>1909</span>
+                                </label>
+                            </p>
+                            <p>
+                                <label>
+                                    <input type="checkbox" name="year-tick" class="year-tick" checked="checked" />
+                                    <span>1910</span>
+                                </label>
+                            </p>
+                            <p>
+                                <label>
+                                    <input type="checkbox" name="year-tick" class="year-tick" checked="checked" />
+                                    <span>1911</span>
+                                </label>
+                            </p>
+                            <p>
+                                <label>
+                                    <input type="checkbox" name="year-tick" class="year-tick" checked="checked" />
+                                    <span>1912</span>
+                                </label>
+                            </p>
+                            <p>
+                                <label>
+                                    <input type="checkbox" name="year-tick" class="year-tick" checked="checked" />
+                                    <span>1913</span>
+                                </label>
+                            </p>
+                            <p>
+                                <label>
+                                    <input type="checkbox" name="year-tick" class="year-tick" checked="checked" />
+                                    <span>1914</span>
+                                </label>
+                            </p>
+                            <p>
+                                <label>
+                                    <input type="checkbox" name="year-tick" class="year-tick" checked="checked" />
+                                    <span>1915</span>
+                                </label>
+                            </p>
+                            <p>
+                                <label>
+                                    <input type="checkbox" name="year-tick" class="year-tick" checked="checked" />
+                                    <span>1916</span>
+                                </label>
+                            </p>
+                        </form>
+
+                    </div>
+
+                    <div class="col m2 s3">
+
+                        <p>
+                            <label>
+                                <input type="checkbox" name="year-tick" class="year-tick" checked="checked" />
+                                <span>1917</span>
+                            </label>
+                        </p>
+                        <p>
+                            <label>
+                                <input type="checkbox" name="year-tick" class="year-tick" checked="checked" />
+                                <span>1918</span>
+                            </label>
+                        </p>
+                        <p>
+                            <label>
+                                <input type="checkbox" name="year-tick" class="year-tick" checked="checked" />
+                                <span>1919</span>
+                            </label>
+                        </p>
+                        <p>
+                            <label>
+                                <input type="checkbox" name="year-tick" class="year-tick" checked="checked" />
+                                <span>1920</span>
+                            </label>
+                        </p>
+                        <p>
+                            <label>
+                                <input type="checkbox" name="year-tick" class="year-tick" checked="checked" />
+                                <span>1921</span>
+                            </label>
+                        </p>
+                        <p>
+                            <label>
+                                <input type="checkbox" name="year-tick" class="year-tick" checked="checked" />
+                                <span>1922</span>
+                            </label>
+                        </p>
+                        <p>
+                            <label>
+                                <input type="checkbox" name="year-tick" class="year-tick" checked="checked" />
+                                <span>1923</span>
+                            </label>
+                        </p>
+                        <p>
+                            <label>
+                                <input type="checkbox" name="year-tick" class="year-tick" checked="checked" />
+                                <span>1924</span>
+                            </label>
+                        </p>
+                        <p>
+                            <label>
+                                <input type="checkbox" name="year-tick" class="year-tick" checked="checked" />
+                                <span>1925</span>
+                            </label>
+                        </p>
+                        <p>
+                            <label>
+                                <input type="checkbox" name="year-tick" class="year-tick" checked="checked" />
+                                <span>1926</span>
+                            </label>
+                        </p>
+                        <p>
+                            <label>
+                                <input type="checkbox" name="year-tick" class="year-tick" checked="checked" />
+                                <span>1927</span>
+                            </label>
+                        </p>
+                        <p>
+                            <label>
+                                <input type="checkbox" name="year-tick" class="year-tick" checked="checked" />
+                                <span>1928</span>
+                            </label>
+                        </p>
+
+                    </div>
+
+                    <div class="col m2 s3">
+                        <p>
+                            <label>
+                                <input type="checkbox" name="year-tick" class="year-tick" checked="checked" />
+                                <span>1929</span>
+                            </label>
+                        </p>
+                        <p>
+                            <label>
+                                <input type="checkbox" name="year-tick" class="year-tick" checked="checked" />
+                                <span>1930</span>
+                            </label>
+                        </p>
+                        <p>
+                            <label>
+                                <input type="checkbox" name="year-tick" class="year-tick" checked="checked" />
+                                <span>1931</span>
+                            </label>
+                        </p>
+                        <p>
+                            <label>
+                                <input type="checkbox" name="year-tick" class="year-tick" checked="checked" />
+                                <span>1932</span>
+                            </label>
+                        </p>
+                        <p>
+                            <label>
+                                <input type="checkbox" name="year-tick" class="year-tick" checked="checked" />
+                                <span>1933</span>
+                            </label>
+                        </p>
+                        <p>
+                            <label>
+                                <input type="checkbox" name="year-tick" class="year-tick" checked="checked" />
+                                <span>1934</span>
+                            </label>
+                        </p>
+                        <p>
+                            <label>
+                                <input type="checkbox" name="year-tick" class="year-tick" checked="checked" />
+                                <span>1935</span>
+                            </label>
+                        </p>
+                        <p>
+                            <label>
+                                <input type="checkbox" name="year-tick" class="year-tick" checked="checked" />
+                                <span>1936</span>
+                            </label>
+                        </p>
+                        <p>
+                            <label>
+                                <input type="checkbox" name="year-tick" class="year-tick" checked="checked" />
+                                <span>1937</span>
+                            </label>
+                        </p>
+                        <p>
+                            <label>
+                                <input type="checkbox" name="year-tick" class="year-tick" checked="checked" />
+                                <span>1938</span>
+                            </label>
+                        </p>
+                        <p>
+                            <label>
+                                <input type="checkbox" name="year-tick" class="year-tick" checked="checked" />
+                                <span>1939</span>
+                            </label>
+                        </p>
+                        <p>
+                            <label>
+                                <input type="checkbox" name="year-tick" class="year-tick" checked="checked" />
+                                <span>1940</span>
+                            </label>
+                        </p>
+
+                    </div>
+                    <div class="col m2 s6">
+                        <p>
+                            <label>
+                                <input type="checkbox" name="year-tick" class="year-tick" checked="checked" />
+                                <span>1941</span>
+                            </label>
+                        </p>
+                        <p>
+                            <label>
+                                <input type="checkbox" name="year-tick" class="year-tick" checked="checked" />
+                                <span>1942</span>
+                            </label>
+                        </p>
+                        <p>
+                            <label>
+                                <input type="checkbox" name="year-tick" class="year-tick" checked="checked" />
+                                <span>1943</span>
+                            </label>
+                        </p>
+                        <p>
+                            <label>
+                                <input type="checkbox" name="year-tick" class="year-tick" checked="checked" />
+                                <span>1944</span>
+                            </label>
+                        </p>
+                        <p>
+                            <label>
+                                <input type="checkbox" name="year-tick" class="year-tick" checked="checked" />
+                                <span>1945</span>
+                            </label>
+                        </p>
+                        <p>
+                            <label>
+                                <input type="checkbox" name="year-tick" class="year-tick" checked="checked" />
+                                <span>1946</span>
+                            </label>
+                        </p>
+                        <p>
+                            <label>
+                                <input type="checkbox" name="year-tick" class="year-tick" checked="checked" />
+                                <span>1947</span>
+                            </label>
+                        </p>
+                        <p>
+                            <label>
+                                <input type="checkbox" name="year-tick" class="year-tick" checked="checked" />
+                                <span>1948</span>
+                            </label>
+                        </p>
+                        <p>
+                            <label>
+                                <input type="checkbox" name="year-tick" class="year-tick" checked="checked" />
+                                <span>1949</span>
+                            </label>
+                        </p>
+                        <p>
+                            <label>
+                                <input type="checkbox" name="year-tick" class="year-tick" checked="checked" />
+                                <span>1950</span>
+                            </label>
+                        </p>
+                        <p>
+                            <label>
+                                <input type="checkbox" name="year-tick" class="year-tick" checked="checked" />
+                                <span>1951</span>
+                            </label>
+                        </p>
+                        <p>
+                            <label>
+                                <input type="checkbox" name="year-tick" class="year-tick" checked="checked" />
+                                <span>1952</span>
+                            </label>
+                        </p>
+                    </div>
+
+                    <div class="col m2 s4">
+                        <p>
+                            <label>
+                                <input type="checkbox" name="year-tick" class="year-tick" checked="checked" />
+                                <span>1953</span>
+                            </label>
+                        </p>
+                        <p>
+                            <label>
+                                <input type="checkbox" name="year-tick" class="year-tick" checked="checked" />
+                                <span>1954</span>
+                            </label>
+                        </p>
+                        <p>
+                            <label>
+                                <input type="checkbox" name="year-tick" class="year-tick" checked="checked" />
+                                <span>1955</span>
+                            </label>
+                        </p>
+                        <p>
+                            <label>
+                                <input type="checkbox" name="year-tick" class="year-tick" checked="checked" />
+                                <span>1956</span>
+                            </label>
+                        </p>
+                        <p>
+                            <label>
+                                <input type="checkbox" name="year-tick" class="year-tick" checked="checked" />
+                                <span>1957</span>
+                            </label>
+                        </p>
+                        <p>
+                            <label>
+                                <input type="checkbox" name="year-tick" class="year-tick" checked="checked" />
+                                <span>1958</span>
+                            </label>
+                        </p>
+                        <p>
+                            <label>
+                                <input type="checkbox" name="year-tick" class="year-tick" checked="checked" />
+                                <span>1959</span>
+                            </label>
+                        </p>
+                        <p>
+                            <label>
+                                <input type="checkbox" name="year-tick" class="year-tick" checked="checked" />
+                                <span>1960</span>
+                            </label>
+                        </p>
+                        <p>
+                            <label>
+                                <input type="checkbox" name="year-tick" class="year-tick" checked="checked" />
+                                <span>1961</span>
+                            </label>
+                        </p>
+                        <p>
+                            <label>
+                                <input type="checkbox" name="year-tick" class="year-tick" checked="checked" />
+                                <span>1962</span>
+                            </label>
+                        </p>
+                        <p>
+                            <label>
+                                <input type="checkbox" name="year-tick" class="year-tick" checked="checked" />
+                                <span>1963</span>
+                            </label>
+                        </p>
+                        <p>
+                            <label>
+                                <input id="select-or-deselect-all" type="checkbox" class="year-tick"
+                                    checked="checked" />
+                                <span onclick="selectOrDeselectAll();">All</span>
+                            </label>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div id="search-parameter-3" class="col s12 center-align">
+                <form action="#">
+                    <p>
+                        <label>
+                            <input class="volume-tick" value="1" type="checkbox" name="volume-tick" checked="checked" />
+                            <span>Volume I</span>
+                        </label>
+                    </p>
+                    <p>
+                        <label>
+                            <input class="volume-tick" value="2" type="checkbox" name="volume-tick" checked="checked" />
+                            <span>Volume II</span>
+                        </label>
+                    </p>
+                    <p>
+                        <label>
+                            <input class="volume-tick" value="3" type="checkbox" name="volume-tick" checked="checked" />
+                            <span>Volume III</span>
+                        </label>
+                    </p>
+                </form>
+            </div>
+
+            <div id="search-parameter-4" class="col s12 center-align">
+                <br>
+
+                <div class="row">
+                    <div class="col m3 s12"></div>
+                    <div class="col m6 s12">
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input onkeypress="return checkSubmit(event);" type="text" id="autocomplete-recipient"
+                                    class="autocomplete1">
+                                <label for="autocomplete-input">Name</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="search-parameter-5" class="col s12 center-align">
+                <br>
+
+                <div class="row">
+                    <div class="col m3"></div>
+                    <div class="col m6 s12">
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input onkeypress="return checkSubmit(event);" type="text" id="autocomplete-archive"
+                                    class="autocomplete2">
+                                <label for="autocomplete-input">Archival location</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row center">
+                <a id="search" class="btn-large grey darken-1">SEARCH</a>
+                <!-- <a id="regex-test" class="btn-large grey darken-1">REGEX TEST</a> -->
+                <!-- <a id="archive" class="btn-large grey darken-1">GET ARCHIVE LIST</a> -->
+                <!-- <a id="recipient" class="btn-large grey darken-1">GET RECIPIENT LIST</a> -->
+                <!-- brown, light-blue accent-2, red darken-4 -->
+            </div>
+        </div>
+
+        <!-- Search Results Display -->
+        <div class="row card-panel grey lighten-3">
+
+
+            <div class="center-align grey darken-2">
+
+                <p class="white-text" style="padding-top: 15px;"> RESULTS (<span id="number-of-results"> </span>)</p>
+                <div id="search-results" class="collection left-align"></div>
+
+            </div>
+
+        </div>
+
+        <!-- Hidden Modal Trigger -->
+        <a id="results-modal-button" style="display: none" class="btn modal-trigger" href="#results-modal">Modal</a>
+
+        <!-- Modal Structure -->
+        <div id="results-modal" class="modal brown lighten-5 indigo-text modal-fixed-footer">
+            <div class="modal-content">
+                <!-- Single Letter Display -->
+                <div id="letter-display" class="row darken-3-text">
+                    <b class="center-align">
+                        <p>
+                            <span id="letter-result-number"></span>
+                            <span id="letter-id"></span>
+                            <span id="letter-recipient"></span>
+                            <span id="letter-year"></span>
+                            <span id="letter-volume"></span>
+                            <span id="letter-archive"></span>
+                        </p>
+                    </b>
+                    <p id="letter-content" style="margin-bottom: 0px"></p>
+                </div>
+            </div>
+            <div class="modal-footer grey lighten-3" style="text-align: center">
+                <img src="assets/previous.png" onclick="previousResult();" title="Previous search result" style="float: left; position: relative; top: 5px;">
+                <button class="btn btn-small modal-close center-align">CLOSE</button>
+                <img src="assets/next.png" onclick="nextResult();" title="Next search result" style="float: right; position: relative; top: 5px;">
+            </div>
+        </div>
+
+    </main>
+
+    <footer id="footer" class="footer-fixed">
+        <nav class="z-depth-0 grey darken-3">
+            <div class="nav-extended">
+                <div class="nav-wrapper">
+                    <div class="row center-align" style="font-weight: bold;">
+                        <div class="col s1"></div>
+                        <div class="col s2"><span id="terms">no search terms</span></div>
+                        <!-- <div class="col s2"><span id="type">searching letters</span></div> -->
+                        <div class="col s2"><span id="years" class="tooltipped" data-position="top"
+                                data-tooltip="all years">years (hover)</span></div>
+                        <div class="col s2"><span id="volumes">all volumes</span></div>
+                        <div class="col s2"><span id="recipient">all recipients</span></div>
+                        <div class="col s2"><span id="archives">all archives</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </footer>
+
+    <footer id="mobile-footer" class="footer-fixed">
+        <nav class="z-depth-0 grey darken-3">
+            <div class="nav-extended">
+                <div class="nav-wrapper footer-icons-container">
+                    <div class="row">
+
+                        <div class="col s3"> <img class="reset-search footer-icons" onclick="resetAllInputs();"
+                                title="Reset search parameters and results" src="assets/refresh.png"
+                                style="height: 30px;"></div>
+                        <div class="col s3"> <img class="footer-icons scroll-to-top" title="Scroll to top"
+                                src="assets/up-arrow.png" style="height: 24px;"></div>
+                        <div class="col s3"> <img class="footer-icons random" title="Random letter"
+                                src="assets/shuffle.png" style="height: 28px;"></div>
+                        <div class="col s3"><img id="strict-search-toggle-mobile" onclick="toggleStrictSearch();"
+                                class="footer-icons" title="Toggle strict search (whole word matches only)"
+                                src="assets/lock-open.png" style="height: 28px;"></div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </footer>
+
+    <!-- jQuery link -->
+    <script src="./js/jquery-3.4.1.min.js"></script>
+
+    <!-- Materialize scripts -->
+    <script src="./js/materialize.min.js"></script>
+
+    <!--linking Javascript-->
+    <script type="text/javascript" src="./js/letters.js"></script>
+    <script type="text/javascript" src="./js/search.js"></script>
+
+</body>
+
+</html>
