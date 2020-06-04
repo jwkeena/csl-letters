@@ -7,6 +7,10 @@
     <title>CSL Collected Letters Search</title>
     <meta name="description" content="">
 
+    <!-- Progress bar must be loaded first -->
+    <script data-pace-options='{"ajax": false, "eventLag": false, "elements": false}' src="./js/pace.min.js"></script>
+    <link href="./assets/progressbar.css" rel="stylesheet">
+
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -17,7 +21,25 @@
     <link rel="stylesheet" href="./assets/style.css">
 </head>
 
-<body>
+<style>
+    main {
+        opacity: 0;
+    }
+    
+    main.all-loaded {
+        opacity: 1;
+    }
+</style>
+
+<script type="text/javascript">
+    function revealPage () {
+        console.log("body loaded");
+        const main = document.getElementsByTagName("main")[0];
+        main.classList.add("all-loaded");
+    }
+</script>
+
+<body onload="revealPage()">
 
     <div class="my-container">
         <img src="./assets/letter-lg.jpg">
@@ -644,7 +666,7 @@
 
     <!--linking Javascript-->
     <script type="text/javascript" src="./js/letters.js"></script>
-    <script type="text/javascript" src="./js/search.js"></script>
+    <script type="text/javascript" src="./js/search.js" onload=></script>
 
 </body>
 
