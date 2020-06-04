@@ -107,6 +107,10 @@ a.dropdown-trigger.btn {
     margin-bottom: 20px;
 }
 
+.arrow:hover {
+    cursor: pointer;
+}
+
 /* Faking opaque background */
 /* https://scotch.io/tutorials/how-to-change-a-css-background-images-opacity */
 .my-container {
