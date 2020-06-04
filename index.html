@@ -33,9 +33,9 @@
 
 <script type="text/javascript">
     function revealPage () {
-        console.log("body loaded");
         const main = document.getElementsByTagName("main")[0];
         main.classList.add("all-loaded");
+        Pace.stop;
     }
 </script>
 
