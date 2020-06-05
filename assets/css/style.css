@@ -49,22 +49,9 @@ main {
     border-radius: 5px;
 }
 
-.input-field input[type=text]:focus + label {
-    color:rgb(0, 150, 136);
-    font-weight: bold;
+label {
+    color: grey; 
 }
-
-/* .input-field>label, .input-field>label:active, .input-field>label::after {
-    color:rgb(0, 150, 136);
-    font-weight: bold;
-} */
-
-input.valid:not([type]), input.valid:not([type]):focus, input.valid[type=text]:not(.browser-default), input.valid[type=text]:not(.browser-default):focus, textarea.materialize-textarea.valid, textarea.materialize-textarea.valid:focus, .select-wrapper.valid>input.select-dropdown {
-    border-bottom: 1px solid rgb(0, 150, 136);
-    -webkit-box-shadow: 0 1px 0 0 rgb(0, 150, 136);
-    box-shadow: 0 1px 0 0 rgb(0, 150, 136);
-}
-    
 
 #footnote-text-display {
     font-size: 12px;
